@@ -3,7 +3,6 @@ body {
     font-weight: 400;
     line-height: 1.7;
     color: $color-grey-dark;
-    padding: 3rem;
 }
 
 .heading-primary {
@@ -11,25 +10,35 @@ body {
     text-transform: uppercase;
     backface-visibility: hidden;
     margin-bottom: 60px;
-}
 
-.heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 35px;
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 35px;
 
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-}
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
 
-.heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
+        @include respond(phone) {
+            font-size: 5rem;
+            letter-spacing: 1rem
+        }
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+        animation: moveInRight 1s ease-out;
+
+        
+        @include respond(phone) {
+            letter-spacing: .5rem
+        }
+    }
 }
 
 .heading-secondary {
@@ -43,6 +52,14 @@ body {
     color: transparent;
     letter-spacing: .2rem;
     transition: all .2s;
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
 
     &:hover {
         transform: skewY(2deg) skewX(15deg) scale(1.1);

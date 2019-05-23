@@ -35,6 +35,8 @@ $breakpoint argument choices
 
 // Using EMs for media queries is the best for responsive design
 
+// ORDER for media queries: Base + typography > general layout + grid > page layout > components
+
 //1em = 16px
 
 @mixin respond($breakpoint) {
